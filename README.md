@@ -9,10 +9,16 @@ O frontend exibe as cidades disponíveis, permite selecionar uma cidade, exibe s
 atividade/
 ├── frontend/
 │   ├── src/
-│   │   ├── api/              
-│   │   ├── components/       
-│   │   ├── context/          
-│   │   ├── styles/           
+│   │   ├── api/
+│   │   │   └── cidadeService.ts
+│   │   ├── components/
+│   │   │   ├── CidadeList.tsx
+│   │   │   ├── IrradiacaoInfo.tsx
+│   │   │   └── Mapa.tsx       
+│   │   ├── context/
+│   │   │   └── CidadeContext.tsx          
+│   │   ├── styles/
+│   │   │   └── GlobalStyles.ts           
 │   │   ├── App.tsx           
 │   │   ├── main.tsx          
 │   │   └── index.css         
@@ -20,45 +26,45 @@ atividade/
 │   └── vite.config.ts        
 ├── server/
 │   ├── data/
-│   │   ├── cidade.geojson    # Arquivo de cidades em formato GeoJSON
-│   │   ├── global_horizontal_means.geojson  # Irradiação solar
-│   │   └── comandos.sql      # Scripts SQL para criação de tabelas
+│   │   ├── cidade.geojson
+│   │   ├── global_horizontal_means.geojson 
+│   │   └── comandos.sql 
 │   ├── src/
-│   │   ├── controllers/      # Lógica de acesso ao banco e carregamento de dados
+│   │   ├── controllers/
 │   │   │   ├── db.ts
 │   │   │   └── load.ts
-│   │   ├── routes/           # Rotas da API
+│   │   ├── routes/
 │   │   │   └── cidade.ts
-│   │   └── index.ts          # Entrada principal do backend
-│   ├── package.json          # Dependências e scripts do backend
+│   │   └── index.ts  
+│   ├── package.json    
 │   ├── package-lock.json
-│   ├── .env                  # Variáveis de ambiente com configuração do banco
-│   └── tsconfig.json         # Configuração do TypeScript
+│   ├── .env
+│   └── tsconfig.json
 └── README.md
 ```
 - `frontend/`
-  - `src/`
-    - `api/`: Serviços de API para comunicação com o backend.
-      -`cidadeService.ts`
-    - `components/`: Componentes de interface.
-      - `CidadeList.tsx`
-      - `IrradiacaoInfo.tsx`
-      - `Mapa.tsx`
-    - `context/`: Gerenciamento de estado global com React Context.
-      - `CidadeContext.tsx`
-    - `styles/`: Estilização global com Styled Components.
-      - `GlobalStyles.ts`
-    - `App.css`
-    - `App.tsx`: Componente principal.
-    - `index.css` Estilos globais.
-    - `main.tsx`: Entrada principal do React.
-  - `eslint.config.js`
-  - `index.html`
-  - `package-lock.json`
-  - `package.json`: Dependências e scripts do frontend.
-  - `tsconfig.app.json`
-  - `tsconfig.json`
-  - `tsconfig.node.json`
+  - `src/`: Contém o código-fonte do frontend.
+    - `api/`: Serviços de comunicação com o backend.
+      -`cidadeService.ts`: Responsável por fazer as requisições para as rotas do backend (/cidade e /cidade/:id).
+    - `components/`: Componentes de interface que constroem a aplicação.
+      - `CidadeList.tsx`: Lista interativa com as cidades disponíveis (consome cidadeService e exibe os nomes).
+      - `IrradiacaoInfo.tsx`: Exibe as informações detalhadas de irradiação solar da cidade selecionada.
+      - `Mapa.tsx`: Exibe o mapa interativo com o polígono da cidade e o marcador central, usa Leaflet.
+    - `context/`: Gerenciamento de estado global.
+      - `CidadeContext.tsx`: Mantém o estado compartilhado da cidade selecionada (cidade atual, irradiância, etc).
+    - `styles/`: Estilização global.
+      - `GlobalStyles.ts`: Define os estilos globais da aplicação com Styled Components.
+    - `App.css`: Estilos CSS específicos do componente `App.tsx`.
+    - `App.tsx`: Componente raiz da aplicação. Faz a composição de todos os componentes de interface.
+    - `index.css` Estilos globais adicionais.
+    - `main.tsx`: Entrada principal da aplicação React. 
+  - `eslint.config.js`: Regras de linting para padronização e qualidade do código.
+  - `index.html`: Arquivo base HTML usado pelo Vite como entry point.
+  - `package-lock.json`: Registro detalhado das versões instaladas das dependências.
+  - `package.json`: Gerencia as dependências e scripts do frontend.
+  - `tsconfig.app.json`: Configuração adicional de build para o TypeScript da aplicação.
+  - `tsconfig.json`: Configurações do compilador TypeScript.
+  - `tsconfig.node.json`: Configuração do bundler Vite.
   - `vite.config.ts`: Configurações do Vite.
 - `server/`
   - `data/`: Contém os arquivos de dados espaciais fornecidos pelo LABREN/INPE.
