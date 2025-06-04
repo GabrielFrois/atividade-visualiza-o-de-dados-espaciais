@@ -3,7 +3,6 @@ import pool from "../controllers/db";
 
 const router = express.Router();
 
-// ✅ GET /cidade → buscando nome, lat e lon da view atualizada
 router.get("/", async (req, res) => {
   try {
     const resultado = await pool.query(`
@@ -16,7 +15,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// ✅ GET /cidade/:id → detalhe da irradiação (já estava correto)
 router.get("/:id", async (req, res) => {
   const id = req.params.id;
 
