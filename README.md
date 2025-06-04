@@ -104,7 +104,7 @@ git clone https://github.com/GabrielFrois/atividade-visualizacao-de-dados-espaci
 - Crie um banco de dados PostgreSQL
 - Instale a extensão PostGIS
 - No pgAdmin ou outro client SQL, copie os comandos do arquivo `data/comandos.sql` e cole para executar os comando para criar as tabelas no banco de dados
-- Edite o arquivo .env dentro de server/ com os dados de sua conexão
+- Edite o arquivo .env dentro de `server/` com os dados de sua conexão
 - Carregue os dados no banco com:
 ```bash
 cd server
