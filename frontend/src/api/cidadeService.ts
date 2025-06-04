@@ -1,11 +1,11 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:3001', // sem / no final
+  baseURL: 'http://localhost:3001',
 });
 
 export const getCidades = async () => {
-  const response = await api.get('/cidade'); // ou ajuste se for outro endpoint
+  const response = await api.get('/cidade');
   return response.data;
 };
 

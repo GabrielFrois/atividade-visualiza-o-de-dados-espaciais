@@ -10,12 +10,12 @@ const Sidebar = styled.aside`
   width: 250px;
   background: white;
   border: 1px solid #ddd;
-  border-radius: 0;  /* Se quiser tirar o arredondamento pra colar */
+  border-radius: 0;
   padding: 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   z-index: 1000;
   overflow-y: auto;
-  height: 100vh; /* ocupar altura total */
+  height: 100vh;
 
   ul {
     list-style-type: none;

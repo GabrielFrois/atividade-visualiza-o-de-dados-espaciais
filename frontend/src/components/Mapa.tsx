@@ -5,7 +5,6 @@ import wellknown from 'wellknown';
 import { useMemo, useEffect } from 'react';
 import L from 'leaflet';
 
-// 🔄 Componente auxiliar para centralizar visão no polígono
 function AjustarVisaoPoligono({ geojson }: { geojson: any }) {
   const map = useMap();
 

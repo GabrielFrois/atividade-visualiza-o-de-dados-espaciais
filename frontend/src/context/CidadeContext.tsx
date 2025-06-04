@@ -24,7 +24,7 @@ export interface Irradiacao {
   out: number;
   nov: number;
   dez: number;
-  geom: string; // WKT do polígono
+  geom: string; 
 }
 
 
