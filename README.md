@@ -97,7 +97,7 @@ atividade/
 ## Instalação e Execução
 1. Clonar o repositório
 ```bash
-git clone https://github.com/GabrielFrois/atividade-visualizacao-de-dados-espaciais.git atividade
+git clone https://github.com/GabrielFrois/irradiacao-solar.git atividade
 ```
 
 2. Configurar o banco de dados:
